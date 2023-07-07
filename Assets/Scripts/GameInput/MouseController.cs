@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.InputSystem;
+
 using System;
 
 public class MouseController : MonoBehaviour
@@ -12,7 +15,7 @@ public class MouseController : MonoBehaviour
     public event EventHandler MouseOnLeftClickEvent;
 
     //mouse position to world coordinate
-    public Vector3 mouseClickPosition;
+    public Vector3 mousePosition;
 
     // Cool down timer between clicks
     private float ClickingCoolDown;
@@ -30,27 +33,14 @@ public class MouseController : MonoBehaviour
     void Update()
     {
         ClickingCoolDown -= Time.deltaTime;
-        if (Input.GetMouseButton(0) && ClickingCoolDown < 0f)
+        if (Input.GetMouseButton(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                MouseOnLeftClickEvent?.Invoke(this, EventArgs.Empty);
-                mouseClickPosition = hit.point;
-            }
+            Debug.Log("working");
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-        else if (Input.GetMouseButton(1) && ClickingCoolDown < 0f)
+        else if (Input.GetMouseButton(1))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                MouseOnRightClickEvent?.Invoke(this, EventArgs.Empty);
-                mouseClickPosition = hit.point;
-            }
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         
     }

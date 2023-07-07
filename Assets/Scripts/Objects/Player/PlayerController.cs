@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameInput gameInput;
 
     [SerializeField] private UnitSetting unitSetting;
+    [SerializeField] private Rigidbody2D rb;
 
     private float moveSpeed = 10f;
     private bool isWalking;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
 
         Vector3 moveDir = new Vector3(inputVector.x, inputVector.y, 0f);
+        
         transform.position += moveDir * moveSpeed * Time.deltaTime;
 
         isWalking = moveDir != Vector3.zero;

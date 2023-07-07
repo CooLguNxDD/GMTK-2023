@@ -10,7 +10,8 @@ public class KillZone : MonoBehaviour, ITerrain
         return this.groundType;
     }
 
-    void OnCollisionEnter(Collision collision){
+    void OnCollisionEnter2D(Collision2D collision){
+        Debug.Log("got it!");
         if(collision.gameObject.TryGetComponent(out IUnits otherUnits)){
             Debug.Log("got it!");
             if(otherUnits.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT){

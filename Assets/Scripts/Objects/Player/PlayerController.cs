@@ -21,13 +21,13 @@ public class PlayerController : MonoBehaviour
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
 
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+        Vector3 moveDir = new Vector3(inputVector.x, inputVector.y, 0f);
         transform.position += moveDir * moveSpeed * Time.deltaTime;
 
         isWalking = moveDir != Vector3.zero;
 
-        float rotationSpeed = 10f;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotationSpeed);
+        // float rotationSpeed = 10f;
+        // transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotationSpeed);
     }
     
     public bool IsWalking(){

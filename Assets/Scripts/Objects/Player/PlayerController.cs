@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
+	[SerializeField] private Camera cam;
 
     private Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;

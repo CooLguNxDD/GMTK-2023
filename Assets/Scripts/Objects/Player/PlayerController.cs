@@ -6,7 +6,7 @@ using System;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+    private PlayerLife playerLife;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private UnitSetting unitSetting;
     [SerializeField] private float _rotationSpeed;
@@ -21,14 +21,21 @@ public class PlayerController : MonoBehaviour
     private bool isWalking;
 
     private void Start(){
-         moveSpeed = unitSetting.getWalkingSpeed();
+    playerLife = GetComponent<PlayerLife>();
+
+    if (playerLife == null)
+    {
+        Debug.LogError("PlayerLife component not found on this GameObject. Please add one.");
+    }
     }
 
     private void Update(){
-        
-        SetplayerVelocity();
-        RotateInDirectionOfInput();
+    if (playerLife != null && playerLife.IsDead()) return;
+
+    SetplayerVelocity();
+    RotateInDirectionOfInput();
     }
+
     
     private void SetplayerVelocity(){
         _movementInput = gameInput.GetMovementVectorNormalized();

@@ -116,6 +116,7 @@ public class EnemyAnimal : MonoBehaviour
         //find the closest player target
         float nearestDistance = 9999999f;
         Debug.Log("dectected");
+        bool isTargerFound = false;
         foreach (Collider2D collider in colliders){
             if(collider.TryGetComponent(out IUnits status)){
                 if(status.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT){
@@ -125,8 +126,14 @@ public class EnemyAnimal : MonoBehaviour
                         currentTargetObject = collider.gameObject;
                     }
                     isPlayerTargetFound = true;
+                    isTargerFound = true;
+                }
+
+                if(!isTargerFound){
+                    isPlayerTargetFound = false;
                 }
             }
+            
         }
     }
 
@@ -140,8 +147,8 @@ public class EnemyAnimal : MonoBehaviour
         }
     }
 
-    //add a Collision force when player collide with this object
-    private void OnCollisionEnter2D(Collision2D collision){
+    // add a Collision force when player collide with this object
+    private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.TryGetComponent(out IUnits units)){
             if(units.GetUnitsType() == IUnits.UnitType.FODD_UNIT){
                 collision.gameObject.GetComponent<UnitSetting>().SetHP(-1);

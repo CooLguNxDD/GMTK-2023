@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.8454399, a: 1}
+  m_Color: {r: 0.3773585, g: 0.008543955, b: 0.32095155, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6368229936773446585}
   - component: {fileID: 9133907148501740430}
   m_Layer: 0
-  m_Name: Food
+  m_Name: Food2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ Transform:
   m_Children:
   - {fileID: 8966401419931557310}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2721650639489189587
 CircleCollider2D:
@@ -179,4 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba30354479fa75c4892e80e43dc2ad21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitsScriptableObject: {fileID: 11400000, guid: 35e4d81ba8cfe8a49b0822baeca02104, type: 2}
+  UnitsScriptableObject: {fileID: 11400000, guid: 5481d37e743c69e49801ab8101eff639, type: 2}

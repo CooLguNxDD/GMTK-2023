@@ -22,15 +22,5 @@ public class FoodScript : MonoBehaviour
 
     public void setMoveDirection(Vector2 moveDir){
         moveDirection = new Vector3(moveDir.x, moveDir.y, 0f);
-        
-    }
-
-    void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.TryGetComponent(out IUnits units)){
-            if(units.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT){
-                collision.gameObject.GetComponent<UnitSetting>().AddingScore();
-                unitSetting.SetHP(-1);
-            }
-        }
     }
 }

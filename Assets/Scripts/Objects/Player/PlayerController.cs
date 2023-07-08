@@ -61,4 +61,17 @@ public class PlayerController : MonoBehaviour
     public bool IsWalking(){
         return isWalking;
     }
+
+
+    void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.TryGetComponent(out IUnits units)){
+            if(units.GetUnitsType() == IUnits.UnitType.FODD_UNIT){
+                unitSetting.AddingScore();
+                collision.gameObject.GetComponent<UnitSetting>().SetHP(-1);
+            }
+        }
+    }
+
+
+
 }

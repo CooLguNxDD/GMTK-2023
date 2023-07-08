@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     
     [SerializeField] private GameInput gameInput;
-
     [SerializeField] private UnitSetting unitSetting;
+    [SerializeField] private float _rotationSpeed;
 
     private Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;
@@ -22,8 +22,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update(){
-
-
+        
+        SetplayerVelocity();
+        RotateInDirectionOfInput();
+    }
+    
+    private void SetplayerVelocity(){
         _movementInput = gameInput.GetMovementVectorNormalized();
 
         _smoothedMovementInput = Vector2.SmoothDamp(
@@ -40,7 +44,16 @@ public class PlayerController : MonoBehaviour
         // float rotationSpeed = 10f;
         // transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotationSpeed);
     }
-    
+
+    private void RotateInDirectionOfInput(){
+    if (_movementInput != Vector2.zero){
+        float targetAngle = Mathf.Atan2(_smoothedMovementInput.y, _smoothedMovementInput.x) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+    }
+}
+
+
     public bool IsWalking(){
         return isWalking;
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class UnitSetting : MonoBehaviour, IUnits
 {
@@ -10,6 +11,10 @@ public class UnitSetting : MonoBehaviour, IUnits
     private string UnitsTag;
 
     private IUnits.UnitType UnitsType;
+    
+
+    public event EventHandler unitHurt;
+    public event EventHandler getScoreWhenUnitCollide;
     private string UnitsName;
 
     private int level;
@@ -33,7 +38,7 @@ public class UnitSetting : MonoBehaviour, IUnits
 
     public void Update(){
         if(this.HP <= 0f){
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -65,8 +70,18 @@ public class UnitSetting : MonoBehaviour, IUnits
         return HP;
     }
 
+    public void HurtedVisual(){
+        unitHurt?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void AddingScore(){
+        GameManager.Instance.TotalScore += 1;
+        getScoreWhenUnitCollide?.Invoke(this, EventArgs.Empty);
+    }
+
     public void takenDamage(float hp)
     {
+        HurtedVisual();
         this.HP -= hp;
     }
 }

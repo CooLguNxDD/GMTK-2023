@@ -38,7 +38,7 @@ public abstract class ObjectSpawnerFromPool : MonoBehaviour
         }
     }
 
-    private void SpawnObject()
+    protected virtual void SpawnObject()
     {
         Vector3 pos = new Vector3(transform.position.x + Random.Range(-2f, 2f), transform.position.y + Random.Range(-2f, 2f), transform.position.z);
         objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);

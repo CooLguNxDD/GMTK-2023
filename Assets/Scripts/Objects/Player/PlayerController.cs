@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameInput gameInput;
 
     [SerializeField] private UnitSetting unitSetting;
+    [SerializeField] private Rigidbody2D rb;
 
     private Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;

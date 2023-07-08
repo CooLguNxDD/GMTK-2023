@@ -35,7 +35,6 @@ public class MouseController : MonoBehaviour
         ClickingCoolDown -= Time.deltaTime;
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("working");
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         else if (Input.GetMouseButton(1))

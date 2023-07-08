@@ -16,5 +16,5 @@ MonoBehaviour:
   UnitsTag: PLAYER
   UnitsType: 0
   UnitsName: PLAYER
-  HP: 100
+  HP: 5
   WalkingSpeed: 10

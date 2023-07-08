@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1718046760654070157}
   - component: {fileID: 8900214797726941411}
   - component: {fileID: 2565158824040888400}
+  - component: {fileID: 884226723203658487}
   - component: {fileID: 6957033695243735756}
   - component: {fileID: 8759978864413868122}
   m_Layer: 0
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8900214797726941411
 SpriteRenderer:
@@ -132,6 +133,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &884226723203658487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893858336206065606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fb71ce40214bb4193c567ba757bc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPool: {fileID: 0}
+  spawnObjectTag: FOOD1
+  spawnerCounterMinTime: 0.1
+  spawnerCounterMaxTime: 0.5
 --- !u!114 &6957033695243735756
 MonoBehaviour:
   m_ObjectHideFlags: 0

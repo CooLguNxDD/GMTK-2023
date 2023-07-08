@@ -9,6 +9,7 @@ public interface IUnits
         PLAYER_UNIT,
         ENEMY_UNIT,
         BOSS_UNIT,
+        FODD_UNIT,
         NONE
     }
     public void SetHP(float hp);

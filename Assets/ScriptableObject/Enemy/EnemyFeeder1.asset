@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 430d0b4122051ca4ab565545e9eb1c32, type: 3}
-  m_Name: SamplePlayer
+  m_Name: EnemyFeeder1
   m_EditorClassIdentifier: 
-  UnitsUID: 5
-  UnitsTag: PLAYER
-  UnitsType: 0
-  UnitsName: PLAYER
-  HP: 5
-  WalkingSpeed: 10
+  UnitsUID: 1
+  UnitsTag: FEEDER1
+  UnitsType: 1
+  UnitsName: FEEDER1
+  HP: 1000
+  WalkingSpeed: 0

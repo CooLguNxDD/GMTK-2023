@@ -33,9 +33,9 @@ public class PlayerController : MonoBehaviour
     private void Update(){
     if (playerLife != null && playerLife.IsDead()) return;
 
-        SetplayerVelocity();
-        RotateInDirectionOfInput();
-        CheckCameraOutOfBounds();
+    SetplayerVelocity();
+    RotateInDirectionOfInput();
+	CheckCameraOutOfBounds();
     }
 
     
@@ -73,23 +73,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
-
-	void CheckCameraOutOfBounds(){
-
-        if(!cam) return;
-        
-        if (rb.transform.position.x < cam.transform.position.x-100)
-        {
-            Debug.Log("out of bounds left");
-        }
-        if (rb.transform.position.x > cam.transform.position.x+100)
-        {
-            Debug.Log("out of bounds right");
-        }
-	}
-
-        void OnCollisionEnter2D(Collision2D collision){
+    void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.TryGetComponent(out IUnits units)){
             if(units.GetUnitsType() == IUnits.UnitType.FODD_UNIT){
                 unitSetting.AddingScore();
@@ -97,6 +81,20 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+	void CheckCameraOutOfBounds(){
+
+    if(!cam) return;
+	
+	if (rb.transform.position.x < cam.transform.position.x-100)
+	{
+		Debug.Log("out of bounds left");
+	}
+	if (rb.transform.position.x > cam.transform.position.x+100)
+	{
+		Debug.Log("out of bounds right");
+	}
+	}
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.TryGetComponent(out IUnits units)){

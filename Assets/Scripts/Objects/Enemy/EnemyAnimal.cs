@@ -109,17 +109,18 @@ public class EnemyAnimal : MonoBehaviour
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange);
         // Debug.Log(colliders.Length);
-        if(colliders.Length == 0){
+        if(colliders.Length == 1){
             isPlayerTargetFound = false;
             return;
         }
         //find the closest player target
         float nearestDistance = 9999999f;
-        Debug.Log("dectected");
+        // Debug.Log("dectected");
         bool isTargerFound = false;
         foreach (Collider2D collider in colliders){
             if(collider.TryGetComponent(out IUnits status)){
                 if(status.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT || status.GetUnitsType() == IUnits.UnitType.ENEMY_UNIT){
+
                     //it should not detect it's own
                     if(collider.gameObject == this.gameObject){
                         continue;

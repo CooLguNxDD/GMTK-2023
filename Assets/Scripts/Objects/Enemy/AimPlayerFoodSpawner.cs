@@ -21,7 +21,7 @@ public class AimPlayerFoodSpawner : ObjectSpawnerFromPool
     protected override void SpawnObject()
     {
 
-        for(int i = -multipleShoot ; i < multipleShoot; i ++){
+        for(int i = -multipleShoot ; i <= multipleShoot; i ++){
             Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
             GameObject currentFood = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);

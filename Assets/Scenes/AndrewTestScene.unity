@@ -1504,6 +1504,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6814324963178088591, guid: 4125d4c08255ed642ab9cdac124cc9a4, type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 569408390}
     - target: {fileID: 8364963532574622419, guid: 4125d4c08255ed642ab9cdac124cc9a4, type: 3}
       propertyPath: gameInput
       value: 
@@ -1511,32 +1515,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4477952929207451373, guid: 4125d4c08255ed642ab9cdac124cc9a4, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 8017566240075608068}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4125d4c08255ed642ab9cdac124cc9a4, type: 3}
---- !u!1 &8017566240075608067 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4477952929207451373, guid: 4125d4c08255ed642ab9cdac124cc9a4, type: 3}
-  m_PrefabInstance: {fileID: 8017566240075608066}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8017566240075608068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8017566240075608067}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8fb71ce40214bb4193c567ba757bc3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPool: {fileID: 569408390}
-  spawnObjectTag: FOOD2
-  spawnerCounterMinTime: 0.1
-  spawnerCounterMaxTime: 0.5
 --- !u!1001 &8054756969874514945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1545,58 +1525,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[1].size
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[2].size
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[3].size
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[1].prefeb
-      value: 
-      objectReference: {fileID: 4837545256193181703, guid: eba4cae028f3ba34dad0e34a8773271b, type: 3}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[2].prefeb
-      value: 
-      objectReference: {fileID: 793402995576715422, guid: 51576df5dc69baa43a53252810cbed3d, type: 3}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[3].prefeb
-      value: 
-      objectReference: {fileID: 8197901616708059722, guid: 6a7ef6f8812365949ad2f426a434bc82, type: 3}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[1].new_tag
-      value: FOOD2
-      objectReference: {fileID: 0}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[2].new_tag
-      value: FOOD3
-      objectReference: {fileID: 0}
-    - target: {fileID: 252094023671493570, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[3].new_tag
-      value: FOOD4
-      objectReference: {fileID: 0}
-    - target: {fileID: 469586667500371403, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 469586667500371403, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 469586667500371403, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
-      propertyPath: Pools.Array.data[0].new_tag
-      value: FOOD1
-      objectReference: {fileID: 0}
     - target: {fileID: 4967172091379338019, guid: 1ec744988dcc5494ab1e361ba7e68929, type: 3}
       propertyPath: m_RootOrder
       value: 5

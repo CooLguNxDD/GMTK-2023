@@ -65,6 +65,14 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
         });
     }
 
+    private void Update(){
+        if(UnitsType != IUnits.UnitType.PLAYER_UNIT){
+            if(HP <= 0){
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
     public float GetHP()
     {
         return HP;

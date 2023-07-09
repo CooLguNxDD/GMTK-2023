@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5750643209353708502}
   - component: {fileID: 6957033695243735756}
   - component: {fileID: 8759978864413868122}
+  - component: {fileID: -511241847527419335}
   m_Layer: 0
   m_Name: EnemyFeeder
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 6893858336206065606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 779601621060151926}
@@ -151,8 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD1
-  spawnerCounterMinTime: 0.1
-  spawnerCounterMaxTime: 0.5
+  spawnerCounterMinTime: 1
+  spawnerCounterMaxTime: 5
 --- !u!114 &2397511453576683969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD2
-  spawnerCounterMinTime: 0.1
-  spawnerCounterMaxTime: 0.5
+  spawnerCounterMinTime: 2
+  spawnerCounterMaxTime: 10
   multipleShoot: 1
   splitFactor: 2
 --- !u!114 &5028951440368368145
@@ -185,8 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD3
-  spawnerCounterMinTime: 0.5
-  spawnerCounterMaxTime: 0.5
+  spawnerCounterMinTime: 5
+  spawnerCounterMaxTime: 10
   MaxNumberOfShoot: 10
   MinNumberOfShoot: 5
 --- !u!114 &5750643209353708502
@@ -203,8 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD4
-  spawnerCounterMinTime: 0.1
-  spawnerCounterMaxTime: 0.1
+  spawnerCounterMinTime: 0.2
+  spawnerCounterMaxTime: 0.2
   NumberOfShoot: 60
 --- !u!114 &6957033695243735756
 MonoBehaviour:
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitsScriptableObject: {fileID: 11400000, guid: 4c6929347c75db349a3fe83aff40ad47, type: 2}
+  HP: 0
 --- !u!114 &8759978864413868122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +237,33 @@ MonoBehaviour:
   gameInput: {fileID: 0}
   impulseForce: 10
   collidedObject: {fileID: 0}
+--- !u!50 &-511241847527419335
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893858336206065606}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &8653497003498198042
 GameObject:
   m_ObjectHideFlags: 0

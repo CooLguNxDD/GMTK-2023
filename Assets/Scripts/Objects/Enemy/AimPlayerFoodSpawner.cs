@@ -5,6 +5,9 @@ using UnityEngine;
 public class AimPlayerFoodSpawner : ObjectSpawnerFromPool
 {
     private GameObject playerObject;
+
+    [SerializeField] private int multipleShoot = 1;
+    [SerializeField]private float splitFactor = 2f;
     protected override void Start(){
         if (!playerObject)
         {
@@ -17,13 +20,17 @@ public class AimPlayerFoodSpawner : ObjectSpawnerFromPool
     }
     protected override void SpawnObject()
     {
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-        GameObject currentFood = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);
+        for(int i = -multipleShoot ; i < multipleShoot; i ++){
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-        Vector3 direction = (playerObject.transform.position - transform.position).normalized;
+            GameObject currentFood = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);
+
+            Vector3 direction = (playerObject.transform.position - transform.position + new Vector3(i * 2, i * 2,0)).normalized;
         
-        currentFood.GetComponent<FoodScript>().setMoveDirection(direction);
+            currentFood.GetComponent<FoodScript>().setMoveDirection(direction);
+        }
+
     }
 
     protected override void Update(){

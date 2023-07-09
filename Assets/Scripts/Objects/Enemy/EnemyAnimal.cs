@@ -81,7 +81,7 @@ public class EnemyAnimal : MonoBehaviour
             }
             //find the closest player target
             float nearestDistance = 9999999f;
-            Debug.Log("dectected");
+            // Debug.Log("dectected");
             foreach (Collider2D collider in colliders){
                 if(collider.TryGetComponent(out IUnits status)){
                     if(status.GetUnitsType() == IUnits.UnitType.FODD_UNIT){
@@ -108,18 +108,18 @@ public class EnemyAnimal : MonoBehaviour
     private void checkIsPlayerNearby(){
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange);
-        Debug.Log(colliders.Length);
+        // Debug.Log(colliders.Length);
         if(colliders.Length == 1){
             isPlayerTargetFound = false;
             return;
         }
         //find the closest player target
         float nearestDistance = 9999999f;
-        Debug.Log("dectected");
+        // Debug.Log("dectected");
         bool isTargerFound = false;
         foreach (Collider2D collider in colliders){
             if(collider.TryGetComponent(out IUnits status)){
-                if(status.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT){
+                if(status.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT || status.GetUnitsType() == IUnits.UnitType.ENEMY_UNIT){
                     float currentDistance = Vector3.Distance(transform.position, collider.gameObject.transform.position);
                     if(currentDistance < nearestDistance){
                         nearestDistance = currentDistance;

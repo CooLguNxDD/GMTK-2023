@@ -778,62 +778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c71c2b1b8b4aa148ba202a9163ed410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1506849663 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6893858336206065606, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
-  m_PrefabInstance: {fileID: 5232498772289578229}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1506849670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506849663}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4308080661c04054e927da28f25e31cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPool: {fileID: 569408390}
-  spawnObjectTag: FOOD1
-  spawnerCounterMinTime: 0.1
-  spawnerCounterMaxTime: 0.5
---- !u!114 &1506849671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506849663}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d8f5fbd18261fc4e9654a412fc3239c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPool: {fileID: 0}
-  spawnObjectTag: FOOD1
-  spawnerCounterMinTime: 0.5
-  spawnerCounterMaxTime: 0.5
-  MaxNumberOfShoot: 10
-  MinNumberOfShoot: 5
---- !u!114 &1506849672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506849663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea07de5259edce64ab90d1c106756bff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPool: {fileID: 0}
-  spawnObjectTag: FOOD1
-  spawnerCounterMinTime: 0.1
-  spawnerCounterMaxTime: 0.1
-  NumberOfShoot: 60
 --- !u!1 &1531075694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,10 +1213,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 884226723203658487, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 884226723203658487, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
       propertyPath: objectPool
       value: 
       objectReference: {fileID: 569408390}
@@ -1320,6 +1260,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2397511453576683969, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397511453576683969, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 569408390}
+    - target: {fileID: 5750643209353708502, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6893858336206065606, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
       propertyPath: m_Name
       value: EnemyFeeder
@@ -1328,23 +1280,10 @@ PrefabInstance:
       propertyPath: gameInput
       value: 
       objectReference: {fileID: 1363428429}
-    - target: {fileID: 8759978864413868122, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
-      propertyPath: impulseForce
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6893858336206065606, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1506849670}
-    - targetCorrespondingSourceObject: {fileID: 6893858336206065606, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 1506849671}
-    - targetCorrespondingSourceObject: {fileID: 6893858336206065606, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1506849672}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6000e355f7c25f04f808297a4eedf966, type: 3}
 --- !u!1001 &8017566240075608066
 PrefabInstance:

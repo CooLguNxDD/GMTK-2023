@@ -94,6 +94,15 @@ MonoBehaviour:
   - new_tag: FOOD1
     prefeb: {fileID: 6758934149400296953, guid: c143d2fd6e65e674f972e197054a4588, type: 3}
     size: 1000
+  - new_tag: FOOD2
+    prefeb: {fileID: 4837545256193181703, guid: eba4cae028f3ba34dad0e34a8773271b, type: 3}
+    size: 1000
+  - new_tag: FOOD3
+    prefeb: {fileID: 793402995576715422, guid: 51576df5dc69baa43a53252810cbed3d, type: 3}
+    size: 1000
+  - new_tag: FOOD4
+    prefeb: {fileID: 8197901616708059722, guid: 6a7ef6f8812365949ad2f426a434bc82, type: 3}
+    size: 1000
 --- !u!1 &6510186535598149744
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,9 +235,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8883093847641046030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcfae9f3283b95f4d9f8f497c885cba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pools: []
+  Pools:
+  - new_tag: FOOD1
+    prefeb: {fileID: 0}
+    size: 0

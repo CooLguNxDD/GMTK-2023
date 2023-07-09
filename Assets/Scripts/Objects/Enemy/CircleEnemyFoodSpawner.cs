@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleEnemyFeeder : ObjectSpawnerFromPool{
+public class CircleEnemyFoodSpawner : ObjectSpawnerFromPool{
 
     [SerializeField] private int MaxNumberOfShoot = 10;
     [SerializeField] private int MinNumberOfShoot = 5;
@@ -12,7 +12,7 @@ public class CircleEnemyFeeder : ObjectSpawnerFromPool{
         int numberOfShoot = Random.Range(MinNumberOfShoot, MaxNumberOfShoot);
         int evenAngle = 360 / numberOfShoot;
 
-        for (int i=0; i<360; i+=evenAngle){
+        for (int i=0; i<=360; i+=evenAngle){
             GameObject currentFood = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);
 
             Vector3 direction = new Vector2(Mathf.Sin(i) , Mathf.Cos(i)).normalized;

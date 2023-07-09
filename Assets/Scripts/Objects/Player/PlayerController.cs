@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
 	[SerializeField] private SpriteRenderer playerSprite;
+	[SerializeField] private Camera cam;
+	[SerializeField] private GameObject player;
 
     private Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;
@@ -88,6 +90,31 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+	// void CheckCameraOutOfBounds()
+	// {
+	// 	Vector2 screenPosition = cam.WorldToScreenPoint(player.transform.position);
+		
+	// 	if(screenPosition.x <0 && rb.velocity.x < 0) 
+	// 	{
+	// 		rb.velocity = new Vector2(0,rb.velocity.y);
+	// 	}
+		
+	// 	if(screenPosition.x > cam.pixelWidth && rb.velocity.x > 0)
+	// 	{
+	// 		rb.velocity = new Vector2(0,rb.velocity.y);
+	// 	}
+		
+	// 	if(screenPosition.y <0 && rb.velocity.y < 0)
+	// 	{
+	// 		rb.velocity = new Vector2(rb.velocity.x,0);
+	// 	}
+		
+	// 	if(screenPosition.y > cam.pixelHeight && rb.velocity.y > 0)
+	// 	{
+	// 		rb.velocity = new Vector2(rb.velocity.x,0);
+	// 	}
+    // }
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.TryGetComponent(out IUnits units)){

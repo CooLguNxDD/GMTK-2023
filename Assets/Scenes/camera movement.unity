@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 707332626}
-  moveSpeedX: 0.1
+  moveSpeedX: 0
   moveSpeedY: 0
 --- !u!114 &707332624
 MonoBehaviour:
@@ -1506,6 +1506,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 707332626}
+    - target: {fileID: 734746946328445377, guid: 2bd1ddb9008bf30418c73104c3598322, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1264347287}
     - target: {fileID: 734746946328445377, guid: 2bd1ddb9008bf30418c73104c3598322, type: 3}
       propertyPath: gameInput
       value: 

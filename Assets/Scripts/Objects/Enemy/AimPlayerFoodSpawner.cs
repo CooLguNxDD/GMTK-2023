@@ -39,16 +39,6 @@ public class AimPlayerFoodSpawner : ObjectSpawnerFromPool
             SpawnObject();
             spawnerCounter = Random.Range(spawnerCounterMinTime, spawnerCounterMaxTime);
         }
-        AimAtTarget(playerObject);
         // transform.LookAt(playerObject.transform);+
-    }
-
-    private float AimAtTarget(GameObject target){
-        float angle = 0;
-        Vector3 relative = transform.InverseTransformPoint(target.transform.position);
-        angle = Mathf.Atan2(relative.x, relative.y)*Mathf.Rad2Deg;
-        transform.Rotate(0,0, -angle);
-
-        return angle;
     }
 }

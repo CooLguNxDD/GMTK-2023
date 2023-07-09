@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-[SerializeField] private Camera cam;
 [SerializeField] private float moveSpeedX =0;
 [SerializeField] private float moveSpeedY =0;
 private float positionX = 0;
@@ -26,9 +25,9 @@ void Update()
    }
 	
 	void moveCamera(){
-		cam.transform.position += new Vector3(moveSpeedX,moveSpeedY,0);
-		positionX += moveSpeedX;
-		positionY += moveSpeedY;
+		transform.position -= new Vector3(moveSpeedX,moveSpeedY,0);
+		positionX -= moveSpeedX;
+		positionY -= moveSpeedY;
 	}
 	
 	void inGameEvent()
@@ -41,7 +40,7 @@ void Update()
 	
 		else if (positionX > 20)
 		{
-		cam.transform.position -= new Vector3(moveSpeedX,moveSpeedY,0);
+		transform.position -= new Vector3(moveSpeedX,moveSpeedY,0);
 		positionX -= moveSpeedX;
 		}
 	

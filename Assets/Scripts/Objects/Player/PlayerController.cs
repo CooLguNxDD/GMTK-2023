@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     SetplayerVelocity();
     RotateInDirectionOfInput();
+	CheckCameraOutOfBounds();
     }
 
     
@@ -80,6 +81,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+	void CheckCameraOutOfBounds(){
+	
+	if (rb.transform.position.x < cam.transform.position.x-100)
+	{
+		Debug.Log("out of bounds left");
+	}
+	if (rb.transform.position.x > cam.transform.position.x+100)
+	{
+		Debug.Log("out of bounds right");
+	}
+	}
 
 
 }

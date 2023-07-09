@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
+	[SerializeField] private SpriteRenderer playerSprite;
 	[SerializeField] private Camera cam;
 	[SerializeField] private GameObject player;
 
@@ -32,11 +33,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update(){
-    if (playerLife != null && playerLife.IsDead()) return;
+        if (playerLife != null && playerLife.IsDead()) return;
 
-    SetplayerVelocity();
-    RotateInDirectionOfInput();
-	CheckCameraOutOfBounds();
+        SetplayerVelocity();
+        RotateInDirectionOfInput();
     }
 
     
@@ -49,7 +49,15 @@ public class PlayerController : MonoBehaviour
             ref _movementInputSmoothVelocity,
             0.1f);
 
+        if(_smoothedMovementInput.x > 0f){
+            playerSprite.flipX = true;
+        }
+        else{
+            playerSprite.flipX = false;
+        }
         Vector3 moveDir = new Vector3(_smoothedMovementInput.x, _smoothedMovementInput.y, 0f);
+
+
         transform.position += moveDir * moveSpeed * Time.deltaTime;
 
         isWalking = moveDir != Vector3.zero;
@@ -83,30 +91,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-	void CheckCameraOutOfBounds()
-	{
-		Vector2 screenPosition = cam.WorldToScreenPoint(player.transform.position);
+	// void CheckCameraOutOfBounds()
+	// {
+	// 	Vector2 screenPosition = cam.WorldToScreenPoint(player.transform.position);
 		
-		if(screenPosition.x <0 && rb.velocity.x < 0) 
-		{
-			rb.velocity = new Vector2(0,rb.velocity.y);
-		}
+	// 	if(screenPosition.x <0 && rb.velocity.x < 0) 
+	// 	{
+	// 		rb.velocity = new Vector2(0,rb.velocity.y);
+	// 	}
 		
-		if(screenPosition.x > cam.pixelWidth && rb.velocity.x > 0)
-		{
-			rb.velocity = new Vector2(0,rb.velocity.y);
-		}
+	// 	if(screenPosition.x > cam.pixelWidth && rb.velocity.x > 0)
+	// 	{
+	// 		rb.velocity = new Vector2(0,rb.velocity.y);
+	// 	}
 		
-		if(screenPosition.y <0 && rb.velocity.y < 0)
-		{
-			rb.velocity = new Vector2(rb.velocity.x,0);
-		}
+	// 	if(screenPosition.y <0 && rb.velocity.y < 0)
+	// 	{
+	// 		rb.velocity = new Vector2(rb.velocity.x,0);
+	// 	}
 		
-		if(screenPosition.y > cam.pixelHeight && rb.velocity.y > 0)
-		{
-			rb.velocity = new Vector2(rb.velocity.x,0);
-		}
-    }
+	// 	if(screenPosition.y > cam.pixelHeight && rb.velocity.y > 0)
+	// 	{
+	// 		rb.velocity = new Vector2(rb.velocity.x,0);
+	// 	}
+    // }
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.TryGetComponent(out IUnits units)){

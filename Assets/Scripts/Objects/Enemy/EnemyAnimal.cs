@@ -179,7 +179,7 @@ public class EnemyAnimal : MonoBehaviour
             
             float angle = Vector2.Angle(Vector2.right, direction);
 
-            Debug.Log("Escape:" + angle);
+            // Debug.Log("Escape:" + angle);
 
                 if (Mathf.Abs(angle) < 90f)
                 {

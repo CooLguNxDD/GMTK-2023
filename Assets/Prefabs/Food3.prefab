@@ -13,16 +13,20 @@ PrefabInstance:
       value: Food3
       objectReference: {fileID: 0}
     - target: {fileID: 5799445338295916951, guid: eba4cae028f3ba34dad0e34a8773271b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9916623c39f9db64980f05058937d002, type: 3}
+    - target: {fileID: 5799445338295916951, guid: eba4cae028f3ba34dad0e34a8773271b, type: 3}
       propertyPath: m_Color.b
-      value: 0.9335289
+      value: 0.56037736
       objectReference: {fileID: 0}
     - target: {fileID: 5799445338295916951, guid: eba4cae028f3ba34dad0e34a8773271b, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.56037736
       objectReference: {fileID: 0}
     - target: {fileID: 5799445338295916951, guid: eba4cae028f3ba34dad0e34a8773271b, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6930141678713921136, guid: eba4cae028f3ba34dad0e34a8773271b, type: 3}
       propertyPath: UnitsScriptableObject

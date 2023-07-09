@@ -18,13 +18,21 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
     private string UnitsName;
 
     private int level;
-    private float HP;
+    [SerializeField] private float HP;
     private float WalkingSpeed;
 
     void Awake()
     {
         ResetSetting();
         // Debug.Log("Spawned Unit " + UnitsName);
+    }
+
+    private void Update(){
+        if(UnitsType != IUnits.UnitType.PLAYER_UNIT){
+            if(HP <= 0){
+                gameObject.SetActive(false);
+            }
+        }
     }
     
     public void ResetSetting()
@@ -35,6 +43,8 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
         HP = UnitsScriptableObject.HP;
         WalkingSpeed = UnitsScriptableObject.WalkingSpeed;
     }
+
+
 
     public void ResetAll(){
         ResetSetting();
@@ -65,13 +75,7 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
         });
     }
 
-    private void Update(){
-        if(UnitsType != IUnits.UnitType.PLAYER_UNIT){
-            if(HP <= 0){
-                gameObject.SetActive(false);
-            }
-        }
-    }
+
 
     public float GetHP()
     {

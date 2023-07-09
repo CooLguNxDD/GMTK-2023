@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public float TotalScore;
 
+    public bool Die;
+
 
     //manage Global variable here
     void Awake(){
@@ -26,6 +28,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Die){
+            
+            //put the death screen here!
+        }
     }
 }

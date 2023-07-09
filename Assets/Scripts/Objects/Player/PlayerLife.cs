@@ -51,7 +51,10 @@ public class PlayerLife : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         animator.SetTrigger("Die");
-        Invoke("RestartLevel", 3f);
+        GameManager.Instance.Die = true;
+
+
+        // Invoke("RestartLevel", 3f);
     }
 
     private void RestartLevel()

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
-	[SerializeField] private Camera cam;
+	[SerializeField] private SpriteRenderer playerSprite;
 
     private Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;
@@ -31,11 +31,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update(){
-    if (playerLife != null && playerLife.IsDead()) return;
+        if (playerLife != null && playerLife.IsDead()) return;
 
-    SetplayerVelocity();
-    RotateInDirectionOfInput();
-	CheckCameraOutOfBounds();
+        SetplayerVelocity();
+        RotateInDirectionOfInput();
     }
 
     
@@ -48,7 +47,15 @@ public class PlayerController : MonoBehaviour
             ref _movementInputSmoothVelocity,
             0.1f);
 
+        if(_smoothedMovementInput.x > 0f){
+            playerSprite.flipX = true;
+        }
+        else{
+            playerSprite.flipX = false;
+        }
         Vector3 moveDir = new Vector3(_smoothedMovementInput.x, _smoothedMovementInput.y, 0f);
+
+
         transform.position += moveDir * moveSpeed * Time.deltaTime;
 
         isWalking = moveDir != Vector3.zero;
@@ -81,20 +88,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-	void CheckCameraOutOfBounds(){
-
-    if(!cam) return;
-	
-	if (rb.transform.position.x < cam.transform.position.x-100)
-	{
-		Debug.Log("out of bounds left");
-	}
-	if (rb.transform.position.x > cam.transform.position.x+100)
-	{
-		Debug.Log("out of bounds right");
-	}
-	}
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.TryGetComponent(out IUnits units)){

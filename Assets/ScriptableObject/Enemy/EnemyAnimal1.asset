@@ -17,4 +17,4 @@ MonoBehaviour:
   UnitsType: 1
   UnitsName: ENEMY_ANIMAL_1
   HP: 10
-  WalkingSpeed: 4
+  WalkingSpeed: 8

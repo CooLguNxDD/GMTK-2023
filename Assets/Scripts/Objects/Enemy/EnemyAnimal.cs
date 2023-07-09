@@ -120,6 +120,12 @@ public class EnemyAnimal : MonoBehaviour
         foreach (Collider2D collider in colliders){
             if(collider.TryGetComponent(out IUnits status)){
                 if(status.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT || status.GetUnitsType() == IUnits.UnitType.ENEMY_UNIT){
+
+                    //it should not detect it's own
+                    if(collider.gameObject == this.gameObject){
+                        continue;
+                    }
+                    //find the nearest enemy
                     float currentDistance = Vector3.Distance(transform.position, collider.gameObject.transform.position);
                     if(currentDistance < nearestDistance){
                         nearestDistance = currentDistance;

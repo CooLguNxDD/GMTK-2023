@@ -17,4 +17,4 @@ MonoBehaviour:
   UnitsType: 3
   UnitsName: FOOD1
   HP: 10
-  WalkingSpeed: 6
+  WalkingSpeed: 8

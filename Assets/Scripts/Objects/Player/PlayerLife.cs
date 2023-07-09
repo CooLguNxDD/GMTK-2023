@@ -36,12 +36,11 @@ public class PlayerLife : MonoBehaviour
 
     private void CheckDeath()
     {
-    
-    if (unitSetting.GetHP() <= 0)
-    {
-        
-        Die();
-    }
+        if (unitSetting.GetHP() <= 0)
+        {
+            
+            Die();
+        }
     }
 
     private void Die()
@@ -50,7 +49,9 @@ public class PlayerLife : MonoBehaviour
         //deathSoundEffect.Play();
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
+        
         animator.SetTrigger("Die");
+        GameManager.Instance.TotalRun = transform.position.x;
         GameManager.Instance.Die = true;
 
 

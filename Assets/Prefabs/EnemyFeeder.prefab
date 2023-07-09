@@ -152,8 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD1
-  spawnerCounterMinTime: 1
-  spawnerCounterMaxTime: 5
+  spawnerCounterMinTime: 0.2
+  spawnerCounterMaxTime: 3
 --- !u!114 &2397511453576683969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,9 +169,9 @@ MonoBehaviour:
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD2
   spawnerCounterMinTime: 2
-  spawnerCounterMaxTime: 10
-  multipleShoot: 1
-  splitFactor: 2
+  spawnerCounterMaxTime: 5
+  multipleShoot: 2
+  splitFactor: 3
 --- !u!114 &5028951440368368145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD3
-  spawnerCounterMinTime: 5
-  spawnerCounterMaxTime: 10
-  MaxNumberOfShoot: 10
+  spawnerCounterMinTime: 3
+  spawnerCounterMaxTime: 6
+  MaxNumberOfShoot: 20
   MinNumberOfShoot: 5
 --- !u!114 &5750643209353708502
 MonoBehaviour:
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD4
-  spawnerCounterMinTime: 0.2
-  spawnerCounterMaxTime: 0.2
+  spawnerCounterMinTime: 0.1
+  spawnerCounterMaxTime: 0.1
   NumberOfShoot: 60
 --- !u!114 &6957033695243735756
 MonoBehaviour:

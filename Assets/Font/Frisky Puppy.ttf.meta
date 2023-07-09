@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5fdbb24da80a984499419e4c78f9e59f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Frisky Puppy
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: db6e3c2460670df428cd231bcb3941e4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

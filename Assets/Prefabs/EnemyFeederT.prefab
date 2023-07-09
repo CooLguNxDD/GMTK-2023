@@ -20,6 +20,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3048326320437258542, guid: e9dfe4270ed6b214986bc3222788640f, type: 3}
+      propertyPath: spawnerCounterMaxTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048326320437258542, guid: e9dfe4270ed6b214986bc3222788640f, type: 3}
+      propertyPath: spawnerCounterMinTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4190687986364785982, guid: e9dfe4270ed6b214986bc3222788640f, type: 3}
       propertyPath: m_Name
       value: EnemyFeederT
@@ -38,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8238224227814296437, guid: e9dfe4270ed6b214986bc3222788640f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8238224227814296437, guid: e9dfe4270ed6b214986bc3222788640f, type: 3}
       propertyPath: m_LocalPosition.x

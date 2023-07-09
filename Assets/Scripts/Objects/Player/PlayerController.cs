@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private Camera cam;
 	[SerializeField] private GameObject player;
 
+    
+
     private Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;
     private Vector2 _movementInputSmoothVelocity;
@@ -50,10 +52,10 @@ public class PlayerController : MonoBehaviour
             0.1f);
 
         if(_smoothedMovementInput.x > 0f){
-            playerSprite.flipX = true;
+            transform.eulerAngles = new Vector3(0, 180f, 0);
         }
         else{
-            playerSprite.flipX = false;
+            transform.eulerAngles = new Vector3(0, 0f, 0);;
         }
         Vector3 moveDir = new Vector3(_smoothedMovementInput.x, _smoothedMovementInput.y, 0f);
 

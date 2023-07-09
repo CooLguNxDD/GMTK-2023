@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
 
     public float TotalScore;
 
+    public AudioSource bgMusic;
+
+    public AudioSource deathMusic;
+
     public float TotalRun;
 
     public string Menu;
@@ -34,6 +38,8 @@ public class GameManager : MonoBehaviour
         if (deathEvent == null)
             deathEvent = new UnityEvent();
         TotalScore = 0f;
+        bgMusic.Play();
+        deathMusic.Stop();
     }
 
     // Update is called once per frame

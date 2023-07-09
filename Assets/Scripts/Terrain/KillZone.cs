@@ -27,4 +27,15 @@ public class KillZone : MonoBehaviour, ITerrain
             }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collision){
+        Debug.Log("Collision detected!");
+
+        if(collision.gameObject.TryGetComponent(out IUnits units)){
+            if(units.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT || units.GetUnitsType() == IUnits.UnitType.ENEMY_UNIT
+            || units.GetUnitsType() == IUnits.UnitType.FODD_UNIT || units.GetUnitsType() == IUnits.UnitType.NONE){
+                units.takenDamage(99999);
+            }
+        }
+    }
 }

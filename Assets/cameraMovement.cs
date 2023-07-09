@@ -33,13 +33,13 @@ void Update()
 	
 	void inGameEvent()
 	{
-		int enemyHealth = 100;
+		int enemyHealth = 0;
 	
 		if (enemyHealth <= 0){
 	
 		}
 	
-		else if (positionX > 100)
+		else if (positionX > 20)
 		{
 		cam.transform.position -= new Vector3(moveSpeedX,moveSpeedY,0);
 		positionX -= moveSpeedX;

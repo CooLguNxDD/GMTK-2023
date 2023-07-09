@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class UnitSetting : MonoBehaviour, IUnits
+public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
 {
    public UnitsScriptableObject UnitsScriptableObject;
 
@@ -15,6 +15,8 @@ public class UnitSetting : MonoBehaviour, IUnits
 
     public event EventHandler unitHurt;
     public event EventHandler getScoreWhenUnitCollide;
+    public event EventHandler<IHasHpBar.OnHpChangedEventArgs> OnHpChanged;
+
     private string UnitsName;
 
     private int level;
@@ -63,6 +65,12 @@ public class UnitSetting : MonoBehaviour, IUnits
     public void SetHP(float hp)
     {
         this.HP = hp;
+
+        OnHpChanged?.Invoke(this, new IHasHpBar.OnHpChangedEventArgs
+        {
+            HpNormalized = HP / UnitsScriptableObject.HP
+            
+        });
     }
 
     public float GetHP()
@@ -83,5 +91,11 @@ public class UnitSetting : MonoBehaviour, IUnits
     {
         HurtedVisual();
         this.HP -= hp;
+
+        OnHpChanged?.Invoke(this, new IHasHpBar.OnHpChangedEventArgs
+        {
+            HpNormalized = HP / UnitsScriptableObject.HP
+            
+        });
     }
 }

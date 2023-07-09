@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : ObjectSpawnerFromPool
+public class tornadeShapeEnemyFoodSpawner : ObjectSpawnerFromPool
 {
     [SerializeField] private int NumberOfShoot = 10;
     protected int currentAngle = 0;

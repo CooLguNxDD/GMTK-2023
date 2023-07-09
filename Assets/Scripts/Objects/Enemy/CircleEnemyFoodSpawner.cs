@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleEnemyFeeder : ObjectSpawnerFromPool{
+public class CircleEnemyFoodSpawner : ObjectSpawnerFromPool{
 
     [SerializeField] private int MaxNumberOfShoot = 10;
     [SerializeField] private int MinNumberOfShoot = 5;

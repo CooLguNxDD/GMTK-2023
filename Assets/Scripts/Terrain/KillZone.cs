@@ -11,12 +11,13 @@ public class KillZone : MonoBehaviour, ITerrain
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        Debug.Log("got it!");
-        if(collision.gameObject.TryGetComponent(out IUnits otherUnits)){
-            Debug.Log("got it!");
-            if(otherUnits.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT){
-                otherUnits.takenDamage(99999);
-            }
+    Debug.Log("Collision detected!");
+    UnitSetting unit = collision.gameObject.GetComponent<UnitSetting>();
+    if(unit != null){
+        Debug.Log("Player hit!");
+        if(unit.GetUnitsType() == IUnits.UnitType.PLAYER_UNIT){
+            unit.takenDamage(99999);
         }
     }
+}
 }

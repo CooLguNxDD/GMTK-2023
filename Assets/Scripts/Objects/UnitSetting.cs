@@ -9,9 +9,7 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
 
     //UnitsScriptableObject -> Unit Setting
     private string UnitsTag;
-
     private IUnits.UnitType UnitsType;
-    
 
     public event EventHandler unitHurt;
     public event EventHandler getScoreWhenUnitCollide;
@@ -23,12 +21,12 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
     private float HP;
     private float WalkingSpeed;
 
-
     void Awake()
     {
         ResetSetting();
         // Debug.Log("Spawned Unit " + UnitsName);
     }
+    
     public void ResetSetting()
     {
         UnitsTag = UnitsScriptableObject.UnitsTag;
@@ -38,22 +36,15 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
         WalkingSpeed = UnitsScriptableObject.WalkingSpeed;
     }
 
-    public void Update(){
-        if(this.HP <= 0f){
-            this.gameObject.SetActive(false);
-        }
-    }
-
-
     public void ResetAll(){
         ResetSetting();
     }
-
 
     public string getUnitsName()
     {
         return this.UnitsName;
     }
+
     public float getWalkingSpeed(){
         return WalkingSpeed;
     }
@@ -62,6 +53,7 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
     {
         return this.UnitsType;
     }
+
     public void SetHP(float hp)
     {
         this.HP = hp;

@@ -15,6 +15,8 @@ public class EnemyAnimal : MonoBehaviour
 
     [SerializeField] private float detectionRange;
 
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
 
     [SerializeField] private GameObject collidedObject;
     private Vector2 currentImpulse;
@@ -57,6 +59,8 @@ public class EnemyAnimal : MonoBehaviour
 
         checkNextFood();
         chaseFood();
+
+
     }
 
     void OnDrawGizmos()
@@ -100,9 +104,27 @@ public class EnemyAnimal : MonoBehaviour
     }
 
     private void chaseFood(){
+
+        if(!currentTargetFood)  return;
+
         if(isFoodTargetFound && !isPlayerTargetFound){
             transform.position = Vector2.MoveTowards(transform.position, currentTargetFood.transform.position, unitSetting.getWalkingSpeed() * Time.deltaTime);
         }
+        
+        if(@isPlayerTargetFound) return;
+        Vector2 direction = new Vector2(transform.position.x, transform.position.y) -
+             new Vector2(currentTargetFood.transform.position.x, currentTargetFood.transform.position.y);
+        float angle = Vector2.Angle(Vector2.right, direction);
+
+        if (Mathf.Abs(angle) < 90f)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (Mathf.Abs(angle) > 90f)
+        {
+            spriteRenderer.flipX = true;
+        }
+            
     }
 
     private void checkIsPlayerNearby(){
@@ -139,18 +161,35 @@ public class EnemyAnimal : MonoBehaviour
                     isPlayerTargetFound = false;
                 }
             }
-            
         }
     }
 
     private void escapeFromPlayer(){
         if(isPlayerTargetFound){
+
             newtargetPosition = new Vector2(
                 transform.position.x + (transform.position.x - currentTargetObject.transform.position.x) * 0.5f,
                 transform.position.y + (transform.position.y - currentTargetObject.transform.position.y) * 0.5f
             );
             transform.position = Vector2.MoveTowards(transform.position, newtargetPosition, unitSetting.getWalkingSpeed() * Time.deltaTime);
-        }
+
+            Vector2 direction = new Vector2(transform.position.x, transform.position.y) -
+             new Vector2(currentTargetObject.transform.position.x, currentTargetObject.transform.position.y);
+
+            
+            float angle = Vector2.Angle(Vector2.right, direction);
+
+            Debug.Log("Escape:" + angle);
+
+                if (Mathf.Abs(angle) < 90f)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else if (Mathf.Abs(angle) > 90f)
+                {
+                    spriteRenderer.flipX = false;
+                }
+            }
     }
 
     // add a Collision force when player collide with this object

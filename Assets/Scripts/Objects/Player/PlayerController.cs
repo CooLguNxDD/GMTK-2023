@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         transform.position += moveDir * moveSpeed * Time.deltaTime;
 
         isWalking = moveDir != Vector3.zero;
+        if(!animator) return;
         animator.SetBool("IsWalking", isWalking);
         
 
@@ -82,6 +83,8 @@ public class PlayerController : MonoBehaviour
     }
 
 	void CheckCameraOutOfBounds(){
+
+    if(!cam) return;
 	
 	if (rb.transform.position.x < cam.transform.position.x-100)
 	{

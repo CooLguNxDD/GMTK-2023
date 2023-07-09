@@ -9,11 +9,8 @@ public class RandomEnemyFoodSpawner : ObjectSpawnerFromPool
         Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
         GameObject currentFood = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);
-        GameObject currentFood2 = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);
-        GameObject currentFood3 = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);
 
-
-        Vector2 shootingDirection = new Vector2(Random.Range(-1f,1f), Random.Range(-1f,1f)).normalized;
+        Vector2 shootingDirection = new Vector2(Mathf.Sin(Random.Range(0,360)), Mathf.Cos(Random.Range(0,360))).normalized;
         currentFood.GetComponent<FoodScript>().setMoveDirection(shootingDirection);
 
     }

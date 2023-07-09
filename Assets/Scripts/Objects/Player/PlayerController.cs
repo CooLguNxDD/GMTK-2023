@@ -93,5 +93,15 @@ public class PlayerController : MonoBehaviour
 	}
 	}
 
+    void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.TryGetComponent(out IUnits units)){
+            if(units.GetUnitsType() == IUnits.UnitType.FODD_UNIT){
+                unitSetting.AddingScore();
+                collision.gameObject.GetComponent<UnitSetting>().SetHP(-1);
+            }
+        }
+    }
+
+
 
 }

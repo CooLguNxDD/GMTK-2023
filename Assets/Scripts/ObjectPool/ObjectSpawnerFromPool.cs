@@ -14,13 +14,13 @@ public abstract class ObjectSpawnerFromPool : MonoBehaviour
     [SerializeField]
     protected float spawnerCounterMaxTime = 20f;
 
-    private float spawnerCounter = 0f;
+    protected float spawnerCounter = 0f;
 
     // You can spawn an object assigned to the pool based on the object Tag;
     // You can override SpawnObject() to spawn with custom behavior.
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         if (!objectPool)
         {
@@ -29,7 +29,7 @@ public abstract class ObjectSpawnerFromPool : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         spawnerCounter -= Time.deltaTime;
         if(spawnerCounter < 0f){

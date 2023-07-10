@@ -27,7 +27,7 @@ public class AimPlayerFoodSpawner : ObjectSpawnerFromPool
             GameObject currentFood = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);
 
             Vector3 direction = (playerObject.transform.position - transform.position + new Vector3(i * 2, i * 2,0)).normalized;
-        
+            
             currentFood.GetComponent<FoodScript>().setMoveDirection(direction);
         }
 

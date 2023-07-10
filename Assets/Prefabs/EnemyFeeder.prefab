@@ -153,7 +153,7 @@ MonoBehaviour:
   objectPool: {fileID: 0}
   spawnObjectTag: FOOD1
   spawnerCounterMinTime: 0.2
-  spawnerCounterMaxTime: 3
+  spawnerCounterMaxTime: 0.5
 --- !u!114 &2397511453576683969
 MonoBehaviour:
   m_ObjectHideFlags: 0

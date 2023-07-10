@@ -8,7 +8,7 @@ public class FoodScript : MonoBehaviour
 
     public UnitSetting unitSetting;
 
-    public float DeathTimer = 15f;
+    public float DeathTimer = 2f;
 
     private Vector3 moveDirection;
     void Start()
@@ -21,6 +21,7 @@ public class FoodScript : MonoBehaviour
     {
         DeathTimer -= Time.deltaTime;
         if(DeathTimer < 0){
+            DeathTimer = 2f;
             gameObject.SetActive(false);
         }
         transform.position += moveDirection * unitSetting.getWalkingSpeed() * Time.deltaTime;

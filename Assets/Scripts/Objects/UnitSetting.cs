@@ -30,7 +30,9 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
     private void Update(){
         if(UnitsType != IUnits.UnitType.PLAYER_UNIT){
             if(HP <= 0){
+                ResetAll();
                 gameObject.SetActive(false);
+                
             }
         }
     }
@@ -99,7 +101,6 @@ public class UnitSetting : MonoBehaviour, IUnits, IHasHpBar
         OnHpChanged?.Invoke(this, new IHasHpBar.OnHpChangedEventArgs
         {
             HpNormalized = HP / UnitsScriptableObject.HP
-            
         });
     }
 }

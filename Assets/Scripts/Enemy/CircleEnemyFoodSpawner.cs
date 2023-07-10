@@ -16,6 +16,7 @@ public class CircleEnemyFoodSpawner : ObjectSpawnerFromPool{
             GameObject currentFood = objectPool.SpawnFromPool(spawnObjectTag, pos, Quaternion.identity);
 
             Vector3 direction = new Vector2(Mathf.Sin(i) , Mathf.Cos(i)).normalized;
+            
             currentFood.GetComponent<FoodScript>().setMoveDirection(direction);
         }
 
